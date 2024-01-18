@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
 
     char** board = create_board(m, n);
 
+    //if the map file is provided, load the board from the file, otherwise generate a random board
     if (map_filename[0] != '\0')
     {
         if (load_board(map_filename, &ant_position_x, &ant_position_y, &ant_direction, &m, &n, &board) != 0) {

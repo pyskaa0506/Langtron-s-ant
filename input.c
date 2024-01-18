@@ -5,7 +5,7 @@
 #include "input.h"
 
 void input_arguments(int argc, char *argv[], int *m, int *n, int *iterations, 
-char *name, char *initial_direction, float *obstacle_percentage, 
+char *name, char *initial_direction, float *obstacle_percentage,
 char *map_filename, size_t map_filename_size, size_t initial_direction_size)
 {
     int option; //przechowywa aktualną opcję przetwarz. przez getopt
@@ -55,6 +55,14 @@ char *map_filename, size_t map_filename_size, size_t initial_direction_size)
             *iterations = atoi(argv[optind + 2]);
             snprintf(name, sizeof(name), "%s", argv[optind + 3]);
             snprintf(initial_direction, initial_direction_size, "%s", argv[optind + 4]);
+            if (initial_direction[0] == '\0') {
+                snprintf(initial_direction, initial_direction_size, "N");
+            }
+            if (initial_direction[0] != 'N' && initial_direction[0] != 'E' && initial_direction[0] != 'S' && initial_direction[0] != 'W')
+            {
+                printf("Niepoprawny kierunek poczatkowy mrowki. Dostepne opcje: N, E, S, W\n");
+                exit(EXIT_FAILURE);
+            }
         }
         return;
     }
@@ -62,7 +70,7 @@ char *map_filename, size_t map_filename_size, size_t initial_direction_size)
     // Jeżeli plik nie został podany, wymagamy pozostałych argumentów
     if (argc - optind < 5)
     {
-        printf("Podano za malo argumentow. Program musi byc wywolany z argumentami: \n <n> <m> <iterations> <file_name_prefix> <initial_direction> [optional: -o <set_procent_black_squares> -f <map_filename>\n");
+        printf("Podano za malo argumentow. Program musi byc wywolany z argumentami: \n <n> <m> <iterations> <file_name_prefix> <initial_direction> [optional: -o <set_procent_black_squares> -f <map_filename>]\n");
         exit(EXIT_FAILURE);
     }
 
@@ -71,4 +79,12 @@ char *map_filename, size_t map_filename_size, size_t initial_direction_size)
     *iterations = atoi(argv[optind + 2]);
     snprintf(name, sizeof(name), "%s", argv[optind + 3]);
     snprintf(initial_direction, initial_direction_size, "%s", argv[optind + 4]);
+    if (initial_direction[0] == '\0') {
+        snprintf(initial_direction, initial_direction_size, "N");
+    }
+    if (initial_direction[0] != 'N' && initial_direction[0] != 'E' && initial_direction[0] != 'S' && initial_direction[0] != 'W')
+    {
+        printf("Niepoprawny kierunek poczatkowy mrowki. Dostepne opcje: N, E, S, W\n");
+        exit(EXIT_FAILURE);
+    }
 }
