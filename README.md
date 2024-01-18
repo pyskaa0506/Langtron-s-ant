@@ -17,6 +17,7 @@ The program can be run with the following command:
 ```bash
 ./ant_simulation <rows> <columns> <iterations> <name_prefix> <initial_direction> -o <obstacle_percentage> -f <map_filename>
 ```
+```
 Where:
 <rows>: The number of rows in the board.
 <columns>: The number of columns in the board.
@@ -25,6 +26,7 @@ Where:
 <initial_direction>: The initial direction of the ant. It can be 'N' for North, 'S' for South, 'E' for East, and 'W' for West.
 <obstacle_percentage>: The percentage of the board to be filled with obstacles. If this argument is not provided, no obstacles will be generated.
 <map_filename>: The name of the file from which to load the board. If this argument is not provided, a board will be generated randomly.
+```
 
 ## Example
 ```bash
