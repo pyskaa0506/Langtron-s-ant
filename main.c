@@ -18,7 +18,6 @@ int main(int argc, char *argv[])
     input_arguments(argc, argv, &m, &n, &iterations, name, initial_direction, 
     &obstacle_percentage, map_filename, sizeof(map_filename), sizeof(initial_direction));
 
-    //board inicialization
     char** board = create_board(m, n);
     load_board(board, m, n, map_filename, &ant_position_x, &ant_position_y, &ant_direction);
     black_spaces(board, m, n, obstacle_percentage);

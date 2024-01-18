@@ -1,6 +1,8 @@
 #include "ant_simulation.h"
 #include <Windows.h>
 #include <stdio.h>
+#include "display.h"
+
 
 void chng_dir_r(ant *ant) {
     if (ant->direction == '^') {
@@ -13,6 +15,8 @@ void chng_dir_r(ant *ant) {
         ant->direction = '^';
     }
 }
+
+
 void chng_dir_l(ant *ant) {
     if (ant->direction == '^') {
         ant->direction = '<';
@@ -24,6 +28,7 @@ void chng_dir_l(ant *ant) {
         ant->direction = 'V';
     }
 }
+
 
 int move_ant(ant *ant, char **board, int m, int n) {
 
@@ -66,10 +71,18 @@ int move_ant(ant *ant, char **board, int m, int n) {
 }
 
 
+void sleepf(int time){
+    // sleep depending on the OS
+    #ifdef _WIN32
+        Sleep(time*1000);
+    #else
+        sleep(time);
+    #endif
+}
+
 
 void simulate_ant(char **board, int m, int n, int iterations, int ant_position_x, int ant_position_y, char ant_direction)
 {
-
     //initialize the ant
     ant ant;
     ant.x = ant_position_x;
@@ -86,29 +99,12 @@ void simulate_ant(char **board, int m, int n, int iterations, int ant_position_x
 
     for (int i = 0; i < iterations; i++) {
 
-        //print the board including the ant
-        for (int i = 0; i < m; i++) {
-            printf("\n");
-            for (int j = 0; j < n; ++j) {
-                if (i == ant.x && j == ant.y) {
-                    printf("%c ", ant.direction);
-                }
-                else {
-                    printf("%d ", board[i][j]);
-                }
-            }
-        }
-        printf("\n");
-        printf("\n");
+//        display_board_with_ant(board, m, n, ant.x, ant.y, ant.direction);
+        display_board_with_ant_utf(board, m, n, ant.x, ant.y, ant.direction);
 
         move_ant(&ant, board, m, n);
 
-        // sleep depending on the OS
-        #ifdef _WIN32
-        Sleep(1000);
-        #else
-        sleep(1);
-        #endif
+        sleepf(1); //sleep for 1 second
 
         // clear the screen
         printf("\033[H\033[J");
