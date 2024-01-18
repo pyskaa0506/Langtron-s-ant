@@ -106,7 +106,7 @@ void simulate_ant(char **board, int m, int n, int iterations, int ant_position_x
 
     for (int i = 0; i < iterations; i++) {
 
-//        save_board(board, i + 1, name, ant.x, ant.y, ant.direction, m, n);
+        save_board(board, i + 1, name, ant.x, ant.y, ant.direction, m, n);
 
         display_board_with_ant_utf(board, m, n, ant.x, ant.y, ant.direction);
 
