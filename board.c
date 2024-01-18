@@ -34,7 +34,7 @@ int* ant_position_y, char* ant_direction)
 
         if (file==NULL) 
         {
-            printf("Nie udało się otworzyć pliku %s\n", map_filename);
+            printf("Nie udalo sie otworzyc pliku %s\n", map_filename);
             exit(EXIT_FAILURE);
 
         }
@@ -45,11 +45,11 @@ int* ant_position_y, char* ant_direction)
             {
                 for (int j = 0; j < n; j++) 
                 {
-                    if (line[j] == '0') 
+                    if (line[j] == 0)
                     {
                         board[i][j] = 0; //biała kratka
                     } 
-                    else if (line[j] == '1') 
+                    else if (line[j] == 1)
                     {
                         board[i][j] = 1; //czarna kratka
                     }

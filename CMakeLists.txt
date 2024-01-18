@@ -7,4 +7,6 @@ add_executable(Langtron_s_ant
         main.c
         board.c
         input.c
-        display.c)
+        display.c
+        ant_simulation.c
+        ant_simulation.h)
