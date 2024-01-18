@@ -5,6 +5,7 @@
 #include <time.h>
 #include <string.h>
 #include "board.h"
+#include "ant_simulation.h"
 
 //Dwówymiarowa tablicz m*n 
 char** create_board(int m, int n) 
@@ -29,36 +30,39 @@ int* ant_position_y, char* ant_direction)
     char line[1000];
 
      if (map_filename != NULL && map_filename[0] != '\0')  
-     {
+    {
         file = fopen(map_filename, "r");
 
-        if (file==NULL) 
+        if (file == NULL)
         {
-            printf("Nie udalo sie otworzyc pliku %s\n", map_filename);
+            printf("Nie udało się otworzyć plik %s\n", map_filename);
             exit(EXIT_FAILURE);
+        } 
 
-        }
+        //odczytanie początkowej pozycji i kier. mrówki
+        fscanf(file, "%d %d %c", ant_position_x, ant_position_y, ant_direction);
 
-        for (int i = 0; i < m; i++) 
+        //odczyr planszy
+          for (int i = 0; i < m; i++)
         {
-            if (fgets(line, sizeof(line), file) != NULL) 
+            if (fgets(line, sizeof(line), file) != NULL)
             {
-                for (int j = 0; j < n; j++) 
+                for (int j =0; j<n; j++)
                 {
-                    if (line[j] == 0)
+                    if (line[j] == '0')
                     {
-                        board[i][j] = 0; //biała kratka
-                    } 
-                    else if (line[j] == 1)
+                        board[i][j] =0; //biała kratka
+                    }
+                    else if (line[j] == '1')
                     {
-                        board[i][j] = 1; //czarna kratka
+                        board[i][j]= 1; //czarna kratka
                     }
                 }
             }
         }
-        fclose(file);
 
-    } 
+    fclose(file);
+    }
     else //jeżeli plik nie jest podany - to plansza z losowymi wartośćiami
     {
         for (int i = 0; i < m; i++) 

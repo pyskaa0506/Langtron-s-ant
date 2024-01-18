@@ -19,12 +19,13 @@ char *map_filename, size_t map_filename_size, size_t initial_direction_size)
     static struct option long_option[] = 
     {
         {"obstacle", required_argument, 0, 'o'},
-        {"file", required_argument, 0,'f'},
+        {"file", required_argument, 0,'f'},  
         {0, 0, 0,0}
     };
     
     *obstacle_percentage = 0.0;
     map_filename[0] = '\0';
+    *iterations = 0;  
 
     while ((option = getopt_long(argc, argv, "o:f:", long_option, NULL)) != -1)
     {
@@ -44,17 +45,30 @@ char *map_filename, size_t map_filename_size, size_t initial_direction_size)
         }
     }
 
-    if (argc - optind< 5)
+    //jeżeli plik z mapą został podany - nie wymagamy reszty argumentów
+    if (map_filename[0] != '\0') 
+    {
+        if (argc - optind >= 5)
+        {
+            *n = atoi(argv[optind]);
+            *m = atoi(argv[optind + 1]);
+            *iterations = atoi(argv[optind + 2]);
+            snprintf(name, sizeof(name), "%s", argv[optind + 3]);
+            snprintf(initial_direction, initial_direction_size, "%s", argv[optind + 4]);
+        }
+        return;
+    }
+
+    // Jeżeli plik nie został podany, wymagamy pozostałych argumentów
+    if (argc - optind < 5)
     {
         printf("Podano za malo argumentow. Program musi byc wywolany z argumentami: \n <n> <m> <iterations> <file_name_prefix> <initial_direction> [optional: -o <set_procent_black_squares> -f <map_filename>\n");
         exit(EXIT_FAILURE);
-
     }
 
     *n = atoi(argv[optind]);
-    *m = atoi(argv[optind +1]);
+    *m = atoi(argv[optind + 1]);
     *iterations = atoi(argv[optind + 2]);
     snprintf(name, sizeof(name), "%s", argv[optind + 3]);
     snprintf(initial_direction, initial_direction_size, "%s", argv[optind + 4]);
-
 }
