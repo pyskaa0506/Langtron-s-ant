@@ -2,16 +2,28 @@
 #include <stdio.h>
 #include <string.h>
 #ifdef _WIN32
-#include <direct.h>
+    #include <direct.h>
 #else
-#include <sys/stat.h>
-#include <sys/types.h>
+    #include <sys/stat.h>
+    #include <sys/types.h>
 #endif
 
+//create file and save to file
+//first line: ant_x, ant_y, ant_direction, m, n
+//every other line: board
 int save_board(char **board, int iteration, char name[1000], int ant_x, int ant_y, char ant_direction, int m, int n){
-    //create file and save to file
-    //first line: ant_x, ant_y, ant_direction, m, n
-    //every other line: board
+
+    char direction;
+    if (ant_direction == '^'){
+        direction = 'N';
+    } else if (ant_direction == '>'){
+        direction = 'E';
+    } else if (ant_direction == 'V'){
+        direction = 'S';
+    } else if (ant_direction == '<'){
+        direction = 'W';
+    }
+
 
     // Create the "maps" directory in the parent directory
 #ifdef _WIN32
@@ -33,7 +45,7 @@ int save_board(char **board, int iteration, char name[1000], int ant_x, int ant_
     }
 
     //first line
-    fprintf(file, "%d %d %c %d %d\n", ant_x, ant_y, ant_direction, m, n);
+    fprintf(file, "%d %d %c %d %d\n", ant_x, ant_y, direction, m, n);
 
     //every other line
     for (int i = 0; i < m; i++){
