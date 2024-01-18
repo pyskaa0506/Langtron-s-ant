@@ -46,7 +46,7 @@ char *map_filename, size_t map_filename_size, size_t initial_direction_size)
 
     if (argc - optind< 5)
     {
-        printf("Podano za mało argumentów. Program musi być wywołany z argumentami <n> <m> <iterations> <name> <initial_direction> [optional_arguments}(nie są obowiązkowe)\n");
+        printf("Podano za malo argumentow. Program musi byc wywolany z argumentami: \n <n> <m> <iterations> <file_name_prefix> <initial_direction> [optional: -o <set_procent_black_squares> -f <map_filename>\n");
         exit(EXIT_FAILURE);
 
     }

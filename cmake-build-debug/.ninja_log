@@ -1,0 +1,20 @@
+# ninja log v5
+13	187	7272859664880769	CMakeFiles/Langtron_s_ant.dir/main.c.obj	1f2c943547efa467
+1	644	7272859669459613	CMakeFiles/Langtron_s_ant.dir/input.c.obj	a7c0278ef7889ba7
+8	723	7272859670250733	CMakeFiles/Langtron_s_ant.dir/board.c.obj	d009b50b6dbee7f8
+3	260	7272860086915745	CMakeFiles/Langtron_s_ant.dir/display.c.obj	932c703d51a56c3d
+262	503	7272860089379149	Langtron_s_ant.exe	c541e03cd34aef00
+3	111	7272866891037459	CMakeFiles/Langtron_s_ant.dir/display.c.obj	932c703d51a56c3d
+112	263	7272866892413786	Langtron_s_ant.exe	c541e03cd34aef00
+4	205	7272869063292827	CMakeFiles/Langtron_s_ant.dir/display.c.obj	932c703d51a56c3d
+212	386	7272869065072975	Langtron_s_ant.exe	c541e03cd34aef00
+3	134	7272872077096789	CMakeFiles/Langtron_s_ant.dir/input.c.obj	a7c0278ef7889ba7
+135	303	7272872078748427	Langtron_s_ant.exe	c541e03cd34aef00
+3	132	7272874089535847	CMakeFiles/Langtron_s_ant.dir/input.c.obj	a7c0278ef7889ba7
+133	268	7272874090872256	Langtron_s_ant.exe	c541e03cd34aef00
+3	105	7272874203185337	CMakeFiles/Langtron_s_ant.dir/input.c.obj	a7c0278ef7889ba7
+105	238	7272874204402091	Langtron_s_ant.exe	c541e03cd34aef00
+3	106	7272874528490580	CMakeFiles/Langtron_s_ant.dir/input.c.obj	a7c0278ef7889ba7
+106	273	7272874530106231	Langtron_s_ant.exe	c541e03cd34aef00
+4	132	7272874762873883	CMakeFiles/Langtron_s_ant.dir/input.c.obj	a7c0278ef7889ba7
+133	296	7272874764479587	Langtron_s_ant.exe	c541e03cd34aef00
