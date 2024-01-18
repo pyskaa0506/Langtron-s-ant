@@ -30,7 +30,7 @@ Where:
 
 ## Example
 ```bash
-./ant_simulation 10 10 15 file N 20 -o 20
+./ant_simulation 10 10 15 file N -o 20
 ```
 This will run a simulation with a 10x10 board for 15 iterations. Generated files will start with "file", the ant starts facing North, 20% of the board is filled with obstacles.
 
