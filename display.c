@@ -67,42 +67,26 @@ void display_board_with_ant_utf(char **board, int m, int n, int ant_position_x, 
     // Set the console to handle Unicode characters
     set_unicode_mode();
 
-    //print the board including the ant (plus one to print hollow arrows in the if == 0 first four statements)
+    //print the board including the ant in UTF-8
     for (int i = 0; i < m; i++) {
         wprintf(L"\n");
         for (int j = 0; j < n; ++j) {
             if (i == ant_position_x && j == ant_position_y) {
                 if (ant_direction == '^') {
-                    if (board[i][j] == 0) {
-                        wprintf(L"\u25B2 ");
-                    } else {
-                        wprintf(L"\u25B2 ");
-                    }
+                    wprintf(L"▲ ");
                 } else if (ant_direction == '>') {
-                    if (board[i][j] == 0) {
-                        wprintf(L"\u25B6 ");
-                    } else {
-                        wprintf(L"\u25B6 ");
-                    }
+                    wprintf(L"▶ ");
                 } else if (ant_direction == 'V') {
-                    if (board[i][j] == 0) {
-                        wprintf(L"\u25Bc ");
-                    } else {
-                        wprintf(L"\u25Bc ");
-                    }
+                    wprintf(L"▼ ");
                 } else if (ant_direction == '<') {
-                    if (board[i][j] == 0) {
-                        wprintf(L"\u25C0 ");
-                    } else {
-                        wprintf(L"\u25C0 ");
-                    }
+                    wprintf(L"◀ ");
                 }
             }
             else {
                 if (board[i][j] == 0) {
-                    wprintf(L"\u2591 ");
+                    wprintf(L"░ ");
                 } else {
-                    wprintf(L"\u2588 ");
+                    wprintf(L"█ ");
                 }
             }
         }
