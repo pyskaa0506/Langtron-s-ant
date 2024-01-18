@@ -60,7 +60,7 @@ char *map_filename, size_t map_filename_size, size_t initial_direction_size)
             }
             if (initial_direction[0] != 'N' && initial_direction[0] != 'E' && initial_direction[0] != 'S' && initial_direction[0] != 'W')
             {
-                printf("Niepoprawny kierunek poczatkowy mrowki. Dostepne opcje: N, E, S, W\n");
+                printf("Niepoprawny lub niepodany kierunek poczatkowy mrowki. Dostepne opcje: N, E, S, W\n");
                 exit(EXIT_FAILURE);
             }
         }
@@ -84,7 +84,7 @@ char *map_filename, size_t map_filename_size, size_t initial_direction_size)
     }
     if (initial_direction[0] != 'N' && initial_direction[0] != 'E' && initial_direction[0] != 'S' && initial_direction[0] != 'W')
     {
-        printf("Niepoprawny kierunek poczatkowy mrowki. Dostepne opcje: N, E, S, W\n");
+        printf("Niepoprawny lub niepodany kierunek poczatkowy mrowki. Dostepne opcje: N, E, S, W\n");
         exit(EXIT_FAILURE);
     }
 }
