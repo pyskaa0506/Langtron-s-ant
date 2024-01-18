@@ -79,6 +79,12 @@ build CMakeFiles/Langtron_s_ant.dir/ant_simulation.c.obj: C_COMPILER__Langtron_s
   OBJECT_DIR = CMakeFiles\Langtron_s_ant.dir
   OBJECT_FILE_DIR = CMakeFiles\Langtron_s_ant.dir
 
+build CMakeFiles/Langtron_s_ant.dir/saving_to_file.c.obj: C_COMPILER__Langtron_s_ant_unscanned_Debug C$:/Users/pyska/Desktop/Langtron-s-ant/saving_to_file.c || cmake_object_order_depends_target_Langtron_s_ant
+  DEP_FILE = CMakeFiles\Langtron_s_ant.dir\saving_to_file.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Langtron_s_ant.dir
+  OBJECT_FILE_DIR = CMakeFiles\Langtron_s_ant.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Langtron_s_ant
@@ -87,7 +93,7 @@ build CMakeFiles/Langtron_s_ant.dir/ant_simulation.c.obj: C_COMPILER__Langtron_s
 #############################################
 # Link the executable Langtron_s_ant.exe
 
-build Langtron_s_ant.exe: C_EXECUTABLE_LINKER__Langtron_s_ant_Debug CMakeFiles/Langtron_s_ant.dir/main.c.obj CMakeFiles/Langtron_s_ant.dir/board.c.obj CMakeFiles/Langtron_s_ant.dir/input.c.obj CMakeFiles/Langtron_s_ant.dir/display.c.obj CMakeFiles/Langtron_s_ant.dir/ant_simulation.c.obj
+build Langtron_s_ant.exe: C_EXECUTABLE_LINKER__Langtron_s_ant_Debug CMakeFiles/Langtron_s_ant.dir/main.c.obj CMakeFiles/Langtron_s_ant.dir/board.c.obj CMakeFiles/Langtron_s_ant.dir/input.c.obj CMakeFiles/Langtron_s_ant.dir/display.c.obj CMakeFiles/Langtron_s_ant.dir/ant_simulation.c.obj CMakeFiles/Langtron_s_ant.dir/saving_to_file.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Langtron_s_ant.dir

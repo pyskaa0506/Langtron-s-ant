@@ -9,4 +9,6 @@ add_executable(Langtron_s_ant
         input.c
         display.c
         ant_simulation.c
-        ant_simulation.h)
+        ant_simulation.h
+        saving_to_file.c
+        saving_to_file.h)

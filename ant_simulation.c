@@ -1,10 +1,14 @@
 #include "ant_simulation.h"
-#include <Windows.h>
 #include <stdio.h>
 #include "display.h"
+#ifdef _WIN32
+#include <windows.h>
+#endif
+#include "saving_to_file.h"
 
 
 void chng_dir_r(ant *ant) {
+
     if (ant->direction == '^') {
         ant->direction = '>';
     } else if (ant->direction == '>') {
@@ -18,6 +22,7 @@ void chng_dir_r(ant *ant) {
 
 
 void chng_dir_l(ant *ant) {
+
     if (ant->direction == '^') {
         ant->direction = '<';
     } else if (ant->direction == '>') {
@@ -74,6 +79,7 @@ int move_ant(ant *ant, char **board, int m, int n) {
 void sleepf(int time){
     // sleep depending on the OS
     #ifdef _WIN32
+        #include <windows.h>
         Sleep(time*1000);
     #else
         sleep(time);
@@ -81,7 +87,7 @@ void sleepf(int time){
 }
 
 
-void simulate_ant(char **board, int m, int n, int iterations, int ant_position_x, int ant_position_y, char ant_direction)
+void simulate_ant(char **board, int m, int n, int iterations, int ant_position_x, int ant_position_y, char ant_direction, char name[1000])
 {
     //initialize the ant
     ant ant;
@@ -99,7 +105,8 @@ void simulate_ant(char **board, int m, int n, int iterations, int ant_position_x
 
     for (int i = 0; i < iterations; i++) {
 
-//        display_board_with_ant(board, m, n, ant.x, ant.y, ant.direction);
+//        save_board(board, i + 1, name, ant.x, ant.y, ant.direction, m, n);
+
         display_board_with_ant_utf(board, m, n, ant.x, ant.y, ant.direction);
 
         move_ant(&ant, board, m, n);

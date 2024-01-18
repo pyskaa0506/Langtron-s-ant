@@ -1,8 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "input.h"
 #include "board.h"
-#include "display.h"
 #include "ant_simulation.h"
 
 
@@ -22,7 +20,7 @@ int main(int argc, char *argv[])
     load_board(board, m, n, map_filename, &ant_position_x, &ant_position_y, &ant_direction);
     black_spaces(board, m, n, obstacle_percentage);
 
-    simulate_ant(board, m, n, iterations, ant_position_x, ant_position_y, ant_direction);
+    simulate_ant(board, m, n, iterations, ant_position_x, ant_position_y, ant_direction, (char *) name[1000]);
 
     free_board(board, m);
    
