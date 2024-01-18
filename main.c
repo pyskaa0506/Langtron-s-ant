@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "input.h"
 #include "board.h"
+#include "display.h"
 
 int main(int argc, char *argv[])
 {
@@ -23,20 +24,22 @@ int main(int argc, char *argv[])
     printf("obstacle_percentage: %f\n", obstacle_percentage);
     printf("map_filename: %s\n", map_filename);
 
-    char** board = create_board(m,n);
-    load_board(board, m,n, NULL, &ant_position_x, &ant_position_y, &ant_direction);
+    char** board = create_board(m, n);
+    load_board(board, m, n, map_filename, &ant_position_x, &ant_position_y, &ant_direction);
+    black_spaces(board, m, n, obstacle_percentage);
 
-    printf("%d",n);
-    printf("%d",m);
-    
-    //initialize_ant
+    printf("Initial Board:\n");
+    display_board_n(board, m, n);
+    printf("--------------------\n");
+    display_board(board, m, n);
 
-    /* for () 
+    /* Tutaj można umieścić kod symulacji mrówki Langtona
+    for () 
     move_ant 
     simulation 
     save_result */
 
     free_board(board, m);
-
+   
     return 0;
 }
