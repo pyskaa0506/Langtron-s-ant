@@ -116,7 +116,10 @@ void simulate_ant(char **board, int m, int n, int iterations, int ant_position_x
         sleepf(1); //sleep for 1 second
 
         // clear the screen
-        printf("\033[H\033[J");
-        fflush(stdout);
+        #ifdef _WIN32
+            system(Command:"cls");
+        #else 
+            system("clear");
+        #endif
     }
 }
