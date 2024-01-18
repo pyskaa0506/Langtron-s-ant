@@ -2,11 +2,14 @@
 #include <stdlib.h>
 #include <wchar.h>
 #include <fcntl.h>
+#include <locale.h>
 #include "display.h"
 
 void set_unicode_mode() {
 #ifdef _WIN32
     _setmode(_fileno(stdout), _O_U16TEXT);
+#else
+    setlocale(LC_ALL, ""); // Ustaw konsolę do obsługi znaków Unicode
 #endif
 }
 

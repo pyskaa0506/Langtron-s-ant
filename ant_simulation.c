@@ -1,5 +1,6 @@
 #include "ant_simulation.h"
 #include <stdio.h>
+#include <unistd.h> 
 #include "display.h"
 #ifdef _WIN32
 #include <windows.h>
