@@ -117,8 +117,8 @@ void simulate_ant(char **board, int m, int n, int iterations, int ant_position_x
 
         // clear the screen
         #ifdef _WIN32
-            system(Command:"cls");
-        #else 
+            system("cls");
+        #else
             system("clear");
         #endif
     }
