@@ -34,3 +34,43 @@ Where:
 ```
 This will run a simulation with a 10x10 board for 15 iterations. Generated files will start with "file", the ant starts facing North, 20% of the board is filled with obstacles.
 
+## Result
+
+### Iteration 1
+```
+░ ░ ░ ░ ░ ░ ░ ░ ░ ░
+░ ░ ░ ░ ░ ░ ░ ░ ░ ░
+░ ░ ░ ░ ░ ░ ░ ░ ░ ░
+░ ░ ░ ░ ░ ░ ░ ░ ░ ░
+░ ░ ░ ░ ░ ░ ░ ░ ░ ░
+░ ░ ░ ░ ░ ▲ ░ ░ ░ ░
+░ ░ ░ ░ ░ ░ ░ ░ ░ ░
+░ ░ ░ ░ ░ ░ ░ ░ ░ ░
+░ ░ ░ ░ ░ ░ ░ ░ ░ ░
+░ ░ ░ ░ ░ ░ ░ ░ ░ ░
+```
+
+### Iterating in the middle of the program running 
+```
+░ ░ ░ ░ ░ ░ ░ ░ ░ ░
+░ ░ ░ ░ ░ ░ ░ ░ ░ ░
+░ ░ ░ ░ ░ ◀ ░ █ ░ ░
+░ ░ ░ ░ ░ ░ █ ░ █ ░
+░ ░ ░ ░ █ ░ ░ ░ █ ░
+░ ░ ░ █ ░ ░ ░ █ ░ ░
+░ ░ █ ░ ░ █ ░ ░ ░ ░
+░ ░ █ ░ ░ █ ░ ░ ░ ░
+░ ░ ░ █ ░ ░ █ ░ ░ ░
+░ ░ ░ ░ █ █ ░ ░ ░ ░
+```
+
+### Iteration 215
+```
+░ █ █ █ ░ ░ ░ ░ █ ░
+░ █ █ █ █ █ █ █ █ ░
+░ ░ █ █ ░ █ ░ ░ █ ░
+░ ░ █ ░ ░ ░ █ ░ █ █
+░ █ ░ ░ █ █ ░ █ █ █
+█ ▶ █ ░ ░ ░ ░ ░ █ ░
+█ █ ░ ░ █ █ █ █ ░ ░
+```
